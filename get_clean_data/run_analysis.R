@@ -66,4 +66,4 @@ aggdata = merge(aggdata, activities,by='activity_id')
 colNames_aggdata  = colnames(aggdata)
 colNames_aggdata[2] = "Mean"
 colnames(aggdata) = colNames_aggdata
-write.table(aggdata, './tidyData.txt',row.names=TRUE,sep='\t');
+write.table(aggdata, '.\\tidyData.txt',row.names=TRUE,sep='\t')
