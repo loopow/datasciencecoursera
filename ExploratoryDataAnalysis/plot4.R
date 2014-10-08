@@ -19,7 +19,7 @@ with(selected_data, {
        xlab="",ylab="Energy sub metering")
   lines(Datetime,Sub_metering_2,col='Red')
   lines(Datetime,Sub_metering_3,col='Blue')
-  legend("topright", col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),lty=1,bty="n",cex=0.6)
+  legend("topright", col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),lty=1,bty="n")
   plot(Datetime,Global_reactive_power, type="l", 
        xlab="datetime",ylab="Global_Rective_Power")
 })
