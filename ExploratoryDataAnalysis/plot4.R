@@ -1,15 +1,21 @@
-setwd("C:\\Users\\kevinzhang\\Documents\\exdata")
+# Plot 4
+
+# get raw data 
 raw_data<- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?")
 raw_data$Date <- as.Date(raw_data$Date, format="%d/%m/%Y")
 
+# filter by date
 selected_data <- subset(raw_data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 
+# convert to date object
 datetime <- paste(selected_data$Date, selected_data$Time)
 selected_data$Datetime <- as.POSIXlt(datetime)
 
+# write to png file
 png(file="plot4.png",height=480, width=480)
-par(mfrow=c(2,2))
 
+# draw chart
+par(mfrow=c(2,2))
 with(selected_data, {
   plot(Datetime,Global_active_power, type="l", 
      xlab="",ylab="Global Active Power" )
